@@ -1,0 +1,144 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  display: flexbox;
+  background-color: rgba(202, 199, 199, 0.123);
+  width: 50%;
+  padding: 10px;
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  
+}
+.del {
+  border: none;
+  color: rgb(248, 197, 197);
+  float: right;
+  background: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+#status {
+  float: right;
+}
+.addBtn {
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  background-color: rgb(123, 126, 123);
+  color: white;
+  font-weight: bold;
+}
+
+
+
+h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 100px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  animation: heading;
+  animation-duration: 3s;
+}
+
+@keyframes heading{
+  0% {margin-top: -30px;}
+  100% {margin-top: 0px;}
+}
+
+.addTodo {
+  border: none;
+  font-size: 20px;
+  width: 80%;
+  height: 50px;
+  margin-left: 40px;
+  padding: 5px;
+  background-color: white;
+}
+
+li {
+  font-size: 20px;
+  background-color: white;
+  width: 80%;
+  height: 50px;
+  padding: 5px;
+  margin-left: 40px;
+  text-align: center;
+  animation: todos;
+  animation-duration: 1s;
+  
+}
+@keyframes todos{
+  0% {margin-left: -1000px;}
+  100% {margin-left: 40px;}
+}
+li:hover {
+  padding-left: 10px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 0;
+}
+
+.del:hover {
+  color: rgba(255, 0, 0, 0.555);
+}
+.todoCaption{
+  text-align: center;
+}
+.todoContainer{
+  float: left;
+  cursor: pointer;
+}
+.todoContainer input{
+  cursor: pointer;
+}
+
+li.deleteItem{
+  animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    /*transform origin is moved to the bottom left corner*/
+    transform-origin: 0% 100%;
+}
+@keyframes removed-item-animation {
+  0% {
+      opacity: 1;
+      transform: rotateZ(0);
+}
+
+  100% {
+      opacity: 0;
+      transform: translateY(600px) rotateZ(90deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  li{
+    font-size: 15px;
+    margin-left: 20px;
+    height: 30px;
+    width: 85%;
+  }
+  h1{
+    font-size: 50px;
+  }
+  .addTodo {
+   
+    font-size: 15px;
+    width: 85%;
+    height: 30px;
+    margin-left: 20px;
+  
+  }
+
+  .container{
+    width: 90%;
+    margin-left: 5%;
+  }
+}
